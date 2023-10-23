@@ -23,3 +23,6 @@ XP.
 ### Скриншоты текущей версии
 ![](https://github.com/HSE-SE-project-5/TodoLists/blob/main/images/home.jpg)  
 ![](https://github.com/HSE-SE-project-5/TodoLists/blob/main/images/lists.jpg)
+
+### Схема базы данных
+![](https://github.com/HSE-SE-project-5/TodoLists/blob/main/images/db.jpg)
