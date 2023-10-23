@@ -1,6 +1,8 @@
-package databaseInteractor;
+package hse.todolist.databaseInteractor;
 
-import entities.List;
+import hse.todolist.entities.List;
+import hse.todolist.entities.*;
+import hse.todolist.databaseInteractor.*;
 
 import java.util.ArrayList;
 

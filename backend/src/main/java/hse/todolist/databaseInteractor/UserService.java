@@ -1,4 +1,4 @@
-package databaseInteractor;
+package hse.todolist.databaseInteractor;
 
 import jakarta.persistence.*;
 
