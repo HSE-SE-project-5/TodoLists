@@ -7,15 +7,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import ru.hse.todolists.adapters.ListsAdapter
 import ru.hse.todolists.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
 
     private var _binding: FragmentDashboardBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private val listsAdapter = ListsAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,11 +29,17 @@ class DashboardFragment : Fragment() {
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        setupRecyclerView()
+
+        listsAdapter.lists = dashboardViewModel.lists.value!!
+        listsAdapter.notifyDataSetChanged()
+
         return root
+    }
+
+    private fun setupRecyclerView() = binding.rvAllLists.apply {
+        adapter = listsAdapter
+        layoutManager = LinearLayoutManager(requireContext())
     }
 
     override fun onDestroyView() {
