@@ -19,3 +19,7 @@ Android-приложения можете создавать списки онл
 
 Проект выполнили Бондарь Федор и Михайлов Денис в рамках курса по SE, следуя методологии 
 XP. 
+
+### Скриншоты текущей версии
+![](https://github.com/HSE-SE-project-5/TodoLists/blob/main/images/home.jpg)  
+![](https://github.com/HSE-SE-project-5/TodoLists/blob/main/images/lists.jpg)
