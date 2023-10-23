@@ -1,4 +1,4 @@
-package entities;
+package hse.todolist.entities;
 
 import jakarta.persistence.*;
 
