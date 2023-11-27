@@ -23,7 +23,7 @@ class ListsDatabase {
         return try {
             val request = Request
                 .Builder()
-                .url(Constants.BASE_URL + "list/getAll")
+                .url(Constants.BASE_URL + "/list/getAll")
                 .header("Authorization", CredentialsHolder.token!!)
                 .get()
                 .build()

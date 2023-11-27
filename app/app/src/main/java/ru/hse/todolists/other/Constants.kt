@@ -7,5 +7,5 @@ object Constants {
 
     const val SCHEME = "http"
 
-    const val BASE_URL = "$SCHEME://$HOST:$PORT/elysium/"
+    const val BASE_URL = "$SCHEME://$HOST:$PORT/todolist"
 }
