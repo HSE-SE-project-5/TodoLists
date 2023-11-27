@@ -1,6 +1,6 @@
-package serverspring.auth;
+package hse.todolist.serverspring.auth;
 
-import entities.User;
+import hse.todolist.entities.User;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.apache.logging.log4j.LogManager;

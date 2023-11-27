@@ -1,6 +1,6 @@
-package serverspring.config;
+package hse.todolist.serverspring.config;
 
-import serverspring.auth.AuthenticationFilter;
+import hse.todolist.serverspring.auth.AuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.context.annotation.Bean;
@@ -29,7 +29,7 @@ import static lombok.AccessLevel.PRIVATE;
 public class SecurityConfig {
 
     private static final RequestMatcher PUBLIC_URLS = new OrRequestMatcher(
-            new AntPathRequestMatcher("/todlist/auth/**")
+            new AntPathRequestMatcher("/todolist/auth/**")
     );
 
     private static final RequestMatcher PROTECTED_URLS = new NegatedRequestMatcher(PUBLIC_URLS);

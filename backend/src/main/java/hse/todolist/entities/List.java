@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class List {
+    @Basic
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "list_id")

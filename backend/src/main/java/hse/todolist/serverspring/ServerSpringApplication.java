@@ -1,4 +1,4 @@
-package serverspring;
+package hse.todolist.serverspring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

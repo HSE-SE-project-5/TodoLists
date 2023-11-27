@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class User {
+    @Basic
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "user_id")

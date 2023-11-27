@@ -2,32 +2,29 @@ package hse.todolist.databaseInteractor;
 
 import jakarta.persistence.*;
 
-import entities.Token;
-// import org.springframework.stereotype.Service;
+import hse.todolist.entities.Token;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
-// @Service
+@Service
 public class TokenService {
     private final EntityManagerFactory
             entityManagerFactory = Persistence.createEntityManagerFactory("default");
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     private final Query getTokenIdWithTokenValueQuery = entityManager.createNativeQuery
-            ("SELECT token_id from se_xp_todolist.\"Token\" " +
-                    "where se_xp_todolist.\"Token\".token_value=:token_value");
+            ("SELECT token_id from token where token_value=:token_value");
 
     @SuppressWarnings("unchecked")
     private final TypedQuery<String> searchRecordsWithRevokedOrExpiredQuery =
             (TypedQuery<String>)entityManager.createNativeQuery
-                    ("SELECT token_value from se_xp_todolist.\"Token\"" +
-                            " where se_xp_todolist.\"Token\".revoked=TRUE OR se_xp_todolist.\"Token\".expired=TRUE");
+                    ("SELECT token_value from token where revoked=TRUE OR expired=TRUE");
 
     @SuppressWarnings("unchecked")
     private final TypedQuery<String> setRevokedForUserChangedPasswordWithUserIdQuery =
             (TypedQuery<String>)entityManager.createNativeQuery
-                    ("SELECT token_value from se_xp_todolist.\"Token\"" +
-                            " where se_xp_todolist.\"Token\".user_id=:user_id", String.class);
+                    ("SELECT token_value from token where user_id=:user_id", String.class);
 
     /**
      * Given a token_value, finds token_id of matching record in Token database table.

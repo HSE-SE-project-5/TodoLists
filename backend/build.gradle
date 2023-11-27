@@ -2,11 +2,11 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.0.3'
     id 'io.spring.dependency-management' version '1.1.0'
-    id 'war'
 }
 
-group 'com.example'
-version '1.0-SNAPSHOT'
+group = 'hse.todolists'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -16,10 +16,7 @@ ext {
     junitVersion = '5.9.1'
 }
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
-
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
@@ -29,7 +26,7 @@ dependencies {
     compileOnly('jakarta.servlet:jakarta.servlet-api:5.0.0')
     implementation('org.hibernate:hibernate-core:6.0.2.Final')
     implementation('org.glassfish.jaxb:jaxb-runtime:3.0.2')
-    implementation('org.postgresql:postgresql:42.6.0')
+    implementation('mysql:mysql-connector-java:8.0.32')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")

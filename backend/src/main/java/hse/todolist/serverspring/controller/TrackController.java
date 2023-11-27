@@ -1,7 +1,7 @@
-package serverspring.controller;
+package hse.todolist.serverspring.controller;
 
-import databaseInteractor.ListService;
-import entities.List;
+import hse.todolist.databaseInteractor.ListService;
+import hse.todolist.entities.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
@@ -18,8 +18,8 @@ public class TrackController {
 
     @GetMapping("/getListInfo")
     ResponseEntity<List> getTrackInfo(
-            @RequestParam int trackId) {
-        List track = trackService.getListWithListId(trackId);
+            @RequestParam int listId) {
+        List track = trackService.getListWithListId(listId);
         if (track == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } else {

@@ -1,6 +1,6 @@
-package serverspring.auth;
+package hse.todolist.serverspring.auth;
 
-import databaseInteractor.TokenService;
+import hse.todolist.databaseInteractor.TokenService;
 import jakarta.persistence.NoResultException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

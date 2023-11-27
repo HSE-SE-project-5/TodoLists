@@ -2,31 +2,31 @@ package hse.todolist.databaseInteractor;
 
 import jakarta.persistence.*;
 
-import entities.List;
-// import org.springframework.stereotype.Service;
+import hse.todolist.entities.List;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
 import static java.lang.Math.min;
 
-// @Service
+@Service
 public class ListService {
     private final EntityManagerFactory
             entityManagerFactory = Persistence.createEntityManagerFactory("default");
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     private final Query getMaxListId = entityManager.createNativeQuery
-            ("SELECT MAX(list_id) from se_xp_todolist.\"List\"");
+            ("SELECT MAX(list_id) from list");
 
     @SuppressWarnings("unchecked")
     private final TypedQuery<List> getListWithListIdsQuery =
             (TypedQuery<List>) entityManager.createNativeQuery
-                    ("SELECT * FROM se_xp_todolist.\"List\" where list_id IN :track_id_array", List.class);
+                    ("SELECT * FROM list where list_id IN :track_id_array", List.class);
 
     @SuppressWarnings("unchecked")
     private final TypedQuery<List> getAllListsQuery =
             (TypedQuery<List>) entityManager.createNativeQuery
-                    ("SELECT * FROM se_xp_todolist.\"List\"", List.class);
+                    ("SELECT * FROM list", List.class);
 
     /**
      * Given List of list_id's, finds matching records with corresponding list_id's

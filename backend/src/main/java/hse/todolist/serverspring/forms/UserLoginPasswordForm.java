@@ -1,4 +1,4 @@
-package serverspring.forms;
+package hse.todolist.serverspring.forms;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

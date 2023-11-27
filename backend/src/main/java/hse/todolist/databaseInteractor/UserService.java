@@ -2,24 +2,24 @@ package hse.todolist.databaseInteractor;
 
 import jakarta.persistence.*;
 
-import entities.User;
+import hse.todolist.entities.User;
 
-// import org.springframework.security.core.userdetails.UserDetailsService;
-// import org.springframework.security.core.userdetails.UsernameNotFoundException;
-// import org.springframework.security.core.userdetails.UserDetails;
-// import org.springframework.stereotype.Service;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-// @Service
-public class UserService /* implements UserDetailsService*/  {
+@Service
+public class UserService implements UserDetailsService  {
     private final EntityManagerFactory
             entityManagerFactory = Persistence.createEntityManagerFactory("default");
     private final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     private final Query getUserIdWithLoginQuery = entityManager.createNativeQuery
-            ("SELECT user_id from se_xp_todolist.\"User\" where se_xp_todolist.\"User\".login=:login");
+            ("SELECT user_id from user where login=:login");
 
     /**
      * Given a user_id, finds matching record in User database table.
@@ -326,7 +326,7 @@ public class UserService /* implements UserDetailsService*/  {
         return true;
     }
 
-    /* @Override
+    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         int userId;
         try {
@@ -338,7 +338,7 @@ public class UserService /* implements UserDetailsService*/  {
         User user = getUserWithUserId(userId);
         return new org.springframework.security.core.userdetails.User(
                 user.getLogin(), user.getPassword(), new ArrayList<>());
-    }*/
+    }
 
     /**
      * Close entity manager and entity manager factory when finished working with class.

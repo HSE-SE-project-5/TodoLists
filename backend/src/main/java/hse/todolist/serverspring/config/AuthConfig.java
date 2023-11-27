@@ -1,6 +1,6 @@
-package serverspring.config;
+package hse.todolist.serverspring.config;
 
-import databaseInteractor.UserService;
+import hse.todolist.databaseInteractor.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

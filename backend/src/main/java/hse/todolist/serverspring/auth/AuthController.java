@@ -1,6 +1,6 @@
-package serverspring.auth;
+package hse.todolist.serverspring.auth;
 
-import serverspring.forms.UserLoginPasswordForm;
+import hse.todolist.serverspring.forms.UserLoginPasswordForm;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;

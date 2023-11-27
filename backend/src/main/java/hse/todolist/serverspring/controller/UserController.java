@@ -1,8 +1,8 @@
-package serverspring.controller;
+package hse.todolist.serverspring.controller;
 
-import databaseInteractor.UserService;
-import entities.User;
-import serverspring.auth.JwtService;
+import hse.todolist.databaseInteractor.UserService;
+import hse.todolist.entities.User;
+import hse.todolist.serverspring.auth.JwtService;
 import jakarta.persistence.NoResultException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;

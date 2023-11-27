@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class Token {
+    @Basic
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "token_id")
@@ -20,6 +21,14 @@ public class Token {
     @Basic
     @Column(name = "user_id")
     private int userId;
+
+    public boolean isRevoked() {
+        return revoked;
+    }
+
+    public boolean isExpired() {
+        return expired;
+    }
 
     public int getTokenId() {
         return tokenId;
@@ -41,6 +50,10 @@ public class Token {
         return revoked;
     }
 
+    public void setRevoked(boolean revoked) {
+        this.revoked = revoked;
+    }
+
     public void setRevoked(Boolean revoked) {
         this.revoked = revoked;
     }
@@ -49,12 +62,20 @@ public class Token {
         return expired;
     }
 
+    public void setExpired(boolean expired) {
+        this.expired = expired;
+    }
+
     public void setExpired(Boolean expired) {
         this.expired = expired;
     }
 
     public int getUserId() {
         return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public void setUserId(int userId) {

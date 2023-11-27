@@ -1,7 +1,7 @@
-package serverspring.auth;
+package hse.todolist.serverspring.auth;
 
-import hse.elysium.databaseInteractor.TokenService;
-import hse.elysium.entities.Token;
+import hse.todolist.databaseInteractor.TokenService;
+import hse.todolist.entities.Token;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;

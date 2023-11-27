@@ -1,9 +1,9 @@
-package serverspring.auth;
+package hse.todolist.serverspring.auth;
 
-import databaseInteractor.TokenService;
-import databaseInteractor.UserService;
-import entities.User;
-import serverspring.forms.UserLoginPasswordForm;
+import hse.todolist.databaseInteractor.TokenService;
+import hse.todolist.databaseInteractor.UserService;
+import hse.todolist.entities.User;
+import hse.todolist.serverspring.forms.UserLoginPasswordForm;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceException;
 import lombok.RequiredArgsConstructor;
